@@ -1,0 +1,6 @@
+{
+    "userName":"Ben Waters",
+    "userEmail": "user_email@knownemail.com",
+    "homeUrl":"https://demoqa.com/",
+    "cucumberTimeout": 20000
+}

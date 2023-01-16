@@ -4,7 +4,7 @@
   "description": "Working Cucumber JS Test Framework",
   "main": "index.js",
   "scripts": {
-    "test-ui": "./node_modules/.bin/cucumber-js --tags=@test-ui ./auto-tests/tests/ui/features",
+    "test-ui": "./node_modules/.bin/cucumber-js --tags=@test-ui ./auto-tests/tests/ui/features --require ./auto-tests/tests/ui/step_definitions",
     "test-api": "./node_modules/.bin/cucumber-js --tags@test-api ./auto-tests/tests/api/features",
     "ui-regression": "./node_modules/.bin/cucumber-js --tags@ui-regression ./auto-tests/tests/api/features",
     "api-regression": "./node_modules/.bin/cucumber-js --tags@api-regression ./auto-tests/tests/api/features"
@@ -18,6 +18,8 @@
     "sinon-chai": "^2.5.0"
   },
   "dependencies": {
-    "q": "^1.0.1"
+    "chromedriver": "^109.0.0",
+    "q": "^1.0.1",
+    "selenium-webdriver": "^4.7.1"
   }
 }
