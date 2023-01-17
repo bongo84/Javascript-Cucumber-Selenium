@@ -26,7 +26,7 @@ class Webdriver {
     }
 
     async quit(){
-        //await this.driver.quit();
+        await this.driver.quit();
     }
 
     async findElement(){
