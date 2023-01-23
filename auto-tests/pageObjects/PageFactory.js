@@ -4,13 +4,15 @@
  */
 const HomePage = require('./HomePage');
 const ElementsPage = require('./ElementsPage')
+const FormsPage = require('./FormsPage')
 
 class PageFactory {
     
     constructor(driver){
         this.driver = driver;
         this.HomePage = new HomePage(this.driver);
-        this.ElementsPage = new ElementsPage(this.driver)
+        this.ElementsPage = new ElementsPage(this.driver);
+        this.FormsPage = new FormsPage(this.driver)
     }
 
     

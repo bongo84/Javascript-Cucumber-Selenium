@@ -21,6 +21,7 @@ Before(async function(){
     this.PageFactory = new PageFactory(driver)
     this.HomePage = this.PageFactory.HomePage;
     this.ElementsPage = this.PageFactory.ElementsPage;
+    this.FormsPage = this.PageFactory.FormsPage;
 
 })
 

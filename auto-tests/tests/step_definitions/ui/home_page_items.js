@@ -1,20 +1,33 @@
 const {Given, When, Then} = require('cucumber')
 const {expect} = require('chai')
-const config = require('../../../config.json')
+const config = require('../../../config.json');
+const { async } = require('q');
 
 Given('that I am at the DemoQA home page' , async function(){
     const url = await this.HomePage.getPageUrl();
     expect(url).to.be.equal(config.homeUrl)
+});
 
-})
+When('the user clicks the <string> menu item' , async function(table){
+    let value = table.rowsHash();
+    
+    if(value.pageName == 'elements'){
+        await this.HomePage.clickMenuItem(this.HomePage.elementsMenuXpath);
+        await this.ElementsPage.waitForPageToLoad(this.ElementsPage.pageUrlSubString);
+    }
+    if(value.pageName == 'forms'){
+        await this.HomePage.clickMenuItem(this.HomePage.formsMenu);
+        await this.FormsPage.waitForPageToLoad(this.FormsPage.pageUrlSubString)
+    }
 
-When('the user clicks the elements item' , async function(){
-
-    await this.HomePage.clickMenuItem(this.HomePage.elementsMenuXpath);
-    await this.HomePage.waitForPageToLoad(this.ElementsPage.pageUrlSubString);
-})
+});
 
 Then('the elements page is loaded', async function(){
     const url = await this.ElementsPage.getPageUrl();
     expect(url).to.be.equal(this.ElementsPage.pageUrl);
-})
+});
+
+Then('the forms page is loaded', async function(){
+    const url = await this.FormsPage.getPageUrl();
+    expect(url).to.be.equal(this.FormsPage.pageUrl);
+});
