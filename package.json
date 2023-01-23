@@ -4,9 +4,9 @@
   "description": "Working Cucumber JS Test Framework",
   "main": "index.js",
   "scripts": {
-    "test-ui": "./node_modules/.bin/cucumber-js --tags=@test-ui ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui --require ./auto-tests/tests/features/support/*.js",
+    "test-ui": "./node_modules/.bin/cucumber-js --tags=@test-ui ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui --require ./auto-tests/tests/features/support/browserHooks.js",
     "test-api": "./node_modules/.bin/cucumber-js --tags@test-api ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api",
-    "ui-regression": "./node_modules/.bin/cucumber-js --tags=@ui-regression ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui",
+    "ui-regression": "./node_modules/.bin/cucumber-js --tags=@ui-regression ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui --require ./auto-tests/tests/features/support/browserHooks.js",
     "api-regression": "./node_modules/.bin/cucumber-js --tags@api-regression ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api"
   },
   "author": "Ben Waters",
