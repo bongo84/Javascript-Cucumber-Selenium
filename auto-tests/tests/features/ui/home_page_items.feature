@@ -35,12 +35,20 @@ Feature: Demo QA Site has correct home page items
         Then the <string> page is loaded
         | pageName | widgets |
 
-    @test-ui
+    @ui-regression
     Scenario: The home page has the correct menu item available for Interactions
         Given that I am at the DemoQA home page
         When the user clicks the <string> menu item
         | pageName | interactions |
         Then the <string> page is loaded
         | pageName | interactions |
+    
+    @ui-regression
+    Scenario: The home page has the correct menu item available for Book Store
+        Given that I am at the DemoQA home page
+        When the user clicks the <string> menu item
+        | pageName | books |
+        Then the <string> page is loaded
+        | pageName | books |
         
 
