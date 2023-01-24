@@ -11,13 +11,18 @@ Given('that I am at the DemoQA home page' , async function(){
 When('the user clicks the <string> menu item' , async function(table){
     let value = table.rowsHash();
     
-    if(value.pageName == 'elements'){
-        await this.HomePage.clickMenuItem(this.HomePage.elementsMenuXpath);
-        await this.ElementsPage.waitForPageToLoad(this.ElementsPage.pageUrlSubString);
-    }
-    if(value.pageName == 'forms'){
-        await this.HomePage.clickMenuItem(this.HomePage.formsMenu);
-        await this.FormsPage.waitForPageToLoad(this.FormsPage.pageUrlSubString)
+    switch (value.pageName) {
+        case "elements":
+            await this.HomePage.clickMenuItem(this.HomePage.elementsMenuXpath);
+            await this.ElementsPage.waitForPageToLoad(this.ElementsPage.pageUrlSubString);
+            break;
+        case "forms":
+            await this.HomePage.clickMenuItem(this.HomePage.formsMenu);
+            await this.FormsPage.waitForPageToLoad(this.FormsPage.pageUrlSubString)
+            break;
+    
+        default:
+            break;
     }
 
 });
