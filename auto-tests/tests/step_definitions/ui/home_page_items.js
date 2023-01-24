@@ -27,6 +27,15 @@ When('the user clicks the <string> menu item' , async function(table){
             await this.HomePage.clickMenuItem(this.HomePage.widgetMenu);
             await this.AlertsPage.waitForPageToLoad(this.WidgetsPage.pageUrlSubString);
             break;
+        case "interactions":
+            await this.HomePage.clickMenuItem(this.HomePage.interactionsMenu);
+            await this.AlertsPage.waitForPageToLoad(this.InteractionsPage.pageUrlSubString);
+            break;
+        case "books":
+            await this.HomePage.scrollToPageElement(this.HomePage.bookStoreAppMenu);
+            await this.HomePage.clickMenuItem(this.HomePage.bookStoreAppMenu);
+            await this.AlertsPage.waitForPageToLoad(this.BookStorePage.pageUrlSubString);
+            break;
     
         default:
             break;
@@ -53,6 +62,14 @@ Then('the <string> page is loaded', async function(table){
         case "widgets":
             const widgetUrl = await this.WidgetsPage.getPageUrl();
             expect(widgetUrl).to.be.equal(this.WidgetsPage.pageUrl)
+            break;
+        case "interactions":
+            const interUrl = await this.InteractionsPage.getPageUrl();
+            expect(interUrl).to.be.equal(this.InteractionsPage.pageUrl)
+            break;
+        case "books":
+            const booksUrl = await this.BookStorePage.getPageUrl();
+            expect(booksUrl).to.be.equal(this.BookStorePage.pageUrl)
             break;
     
         default:

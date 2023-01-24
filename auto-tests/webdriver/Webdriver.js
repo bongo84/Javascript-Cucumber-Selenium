@@ -91,6 +91,13 @@ class Webdriver {
             console.error(error + 'Error in xpath for findElementByXpath Webdriver')
         }
     }
+
+    async scrollToPageElement(xpath){
+        let element = this.findElementByXpath(xpath);
+        let actions = this.driver.actions({async : true});
+
+        await actions.move({ origin: element }).perform();
+    }
     // Working Do i need the above (probably). Below needs error handaling
     async clickElement(xpath){
         this.driver.findElement(By.xpath(xpath)).click();

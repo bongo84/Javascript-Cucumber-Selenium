@@ -7,6 +7,8 @@ const ElementsPage = require('./ElementsPage');
 const FormsPage = require('./FormsPage');
 const AlertsPage = require('./AlertsPage');
 const WidgetsPage = require('./Widgets');
+const InteractionsPage = require('./InteractionsPage');
+const BookStorePage = require('./BookStorePage');
 
 class PageFactory {
     
@@ -17,6 +19,8 @@ class PageFactory {
         this.FormsPage = new FormsPage(this.driver);
         this.AlertsPage = new AlertsPage(this.driver);
         this.WidgetsPage = new WidgetsPage(this.driver);
+        this.InteractionPage = new InteractionsPage(this.driver);
+        this.BookStorePage = new BookStorePage(this.driver);
     }
 
     

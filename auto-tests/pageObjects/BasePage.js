@@ -17,6 +17,10 @@ class BasePage {
         await this.driver.waitForPageToLoad(substring)
     }
 
+    async scrollToPageElement(xpath){
+        await this.driver.scrollToPageElement(xpath);
+    }
+
 
 
 }
