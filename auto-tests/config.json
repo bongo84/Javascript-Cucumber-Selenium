@@ -1,0 +1,8 @@
+{
+    "userName":"Ben Waters",
+    "userEmail": "user_email@knownemail.com",
+    "homeUrl":"https://demoqa.com/",
+    "headless": true,
+    "cucumberTimeout": 20000,
+    "browser": "chrome"
+}
