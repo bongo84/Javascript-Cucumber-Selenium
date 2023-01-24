@@ -19,12 +19,20 @@ Feature: Demo QA Site has correct home page items
         Then the <string> page is loaded
         | pageName | forms |
 
-    @test-ui
+    @ui-regression
     Scenario: The home page has the correct menu item available for Alerts, Frames and Windows
         Given that I am at the DemoQA home page
         When the user clicks the <string> menu item
         | pageName | alerts |
         Then the <string> page is loaded
         | pageName | alerts |
+
+    @ui-regression
+    Scenario: The home page has the correct menu item available for Widgets
+        Given that I am at the DemoQA home page
+        When the user clicks the <string> menu item
+        | pageName | widgets |
+        Then the <string> page is loaded
+        | pageName | widgets |
         
 

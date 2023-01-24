@@ -22,6 +22,11 @@ When('the user clicks the <string> menu item' , async function(table){
         case "alerts":
             await this.HomePage.clickMenuItem(this.HomePage.alertsFrameMenu);
             await this.AlertsPage.waitForPageToLoad(this.AlertsPage.pageUrlSubString);
+            break;
+        case "widgets":
+            await this.HomePage.clickMenuItem(this.HomePage.widgetMenu);
+            await this.AlertsPage.waitForPageToLoad(this.WidgetsPage.pageUrlSubString);
+            break;
     
         default:
             break;
@@ -44,6 +49,10 @@ Then('the <string> page is loaded', async function(table){
         case "alerts":
             const alertUrl = await this.AlertsPage.getPageUrl();
             expect(alertUrl).to.be.equal(this.AlertsPage.pageUrl)
+            break;
+        case "widgets":
+            const widgetUrl = await this.WidgetsPage.getPageUrl();
+            expect(widgetUrl).to.be.equal(this.WidgetsPage.pageUrl)
             break;
     
         default:

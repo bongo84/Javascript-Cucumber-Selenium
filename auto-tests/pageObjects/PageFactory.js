@@ -3,9 +3,10 @@
  * We want to avoid creating numerous page objects in each of the step definition files
  */
 const HomePage = require('./HomePage');
-const ElementsPage = require('./ElementsPage')
-const FormsPage = require('./FormsPage')
-const AlertsPage = require('./AlertsPage')
+const ElementsPage = require('./ElementsPage');
+const FormsPage = require('./FormsPage');
+const AlertsPage = require('./AlertsPage');
+const WidgetsPage = require('./Widgets');
 
 class PageFactory {
     
@@ -15,6 +16,7 @@ class PageFactory {
         this.ElementsPage = new ElementsPage(this.driver);
         this.FormsPage = new FormsPage(this.driver);
         this.AlertsPage = new AlertsPage(this.driver);
+        this.WidgetsPage = new WidgetsPage(this.driver);
     }
 
     

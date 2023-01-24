@@ -24,6 +24,7 @@ Before(async function(){
     this.ElementsPage = this.PageFactory.ElementsPage;
     this.AlertsPage = this.PageFactory.AlertsPage;
     this.FormsPage = this.PageFactory.FormsPage;
+    this.WidgetsPage = this.PageFactory.WidgetsPage;
 
 })
 
