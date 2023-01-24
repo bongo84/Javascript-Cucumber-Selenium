@@ -1,7 +1,6 @@
 const {Given, When, Then} = require('cucumber')
 const {expect} = require('chai')
 const config = require('../../../config.json');
-const { async } = require('q');
 
 Given('that I am at the DemoQA home page' , async function(){
     const url = await this.HomePage.getPageUrl();
@@ -20,6 +19,9 @@ When('the user clicks the <string> menu item' , async function(table){
             await this.HomePage.clickMenuItem(this.HomePage.formsMenu);
             await this.FormsPage.waitForPageToLoad(this.FormsPage.pageUrlSubString)
             break;
+        case "alerts":
+            await this.HomePage.clickMenuItem(this.HomePage.alertsFrameMenu);
+            await this.AlertsPage.waitForPageToLoad(this.AlertsPage.pageUrlSubString);
     
         default:
             break;
@@ -27,12 +29,24 @@ When('the user clicks the <string> menu item' , async function(table){
 
 });
 
-Then('the elements page is loaded', async function(){
-    const url = await this.ElementsPage.getPageUrl();
-    expect(url).to.be.equal(this.ElementsPage.pageUrl);
-});
+Then('the <string> page is loaded', async function(table){
 
-Then('the forms page is loaded', async function(){
-    const url = await this.FormsPage.getPageUrl();
-    expect(url).to.be.equal(this.FormsPage.pageUrl);
+    let value = table.rowsHash();
+    switch (value.pageName) {
+        case "elements":
+            const eleUrl = await this.ElementsPage.getPageUrl();
+            expect(eleUrl).to.be.equal(this.ElementsPage.pageUrl);
+            break;
+        case "forms":
+            const formUrl = await this.FormsPage.getPageUrl();
+            expect(formUrl).to.be.equal(this.FormsPage.pageUrl);
+            break;
+        case "alerts":
+            const alertUrl = await this.AlertsPage.getPageUrl();
+            expect(alertUrl).to.be.equal(this.AlertsPage.pageUrl)
+            break;
+    
+        default:
+            break;
+    }
 });

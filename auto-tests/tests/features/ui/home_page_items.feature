@@ -8,20 +8,23 @@ Feature: Demo QA Site has correct home page items
         Given that I am at the DemoQA home page
         When the user clicks the <string> menu item
         | pageName | elements |
-        Then the elements page is loaded
+        Then the <string> page is loaded
+        | pageName | elements |
 
     @ui-regression
     Scenario: The home page has the correct menu item available for forms
         Given that I am at the DemoQA home page
         When the user clicks the <string> menu item
         | pageName | forms |
-        Then the forms page is loaded
+        Then the <string> page is loaded
+        | pageName | forms |
 
-    @ui-regression
+    @test-ui
     Scenario: The home page has the correct menu item available for Alerts, Frames and Windows
         Given that I am at the DemoQA home page
         When the user clicks the <string> menu item
         | pageName | alerts |
-        Then the alerts page is loaded
+        Then the <string> page is loaded
+        | pageName | alerts |
         
 

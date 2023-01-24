@@ -5,6 +5,7 @@
 const HomePage = require('./HomePage');
 const ElementsPage = require('./ElementsPage')
 const FormsPage = require('./FormsPage')
+const AlertsPage = require('./AlertsPage')
 
 class PageFactory {
     
@@ -12,7 +13,8 @@ class PageFactory {
         this.driver = driver;
         this.HomePage = new HomePage(this.driver);
         this.ElementsPage = new ElementsPage(this.driver);
-        this.FormsPage = new FormsPage(this.driver)
+        this.FormsPage = new FormsPage(this.driver);
+        this.AlertsPage = new AlertsPage(this.driver);
     }
 
     
