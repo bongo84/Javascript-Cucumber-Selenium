@@ -17,6 +17,7 @@ Before(async function(){
      * one by one making a pageObj for world object needs
      */
     setDefaultTimeout(config.cucumberTimeout);
+    driver.init();
     driver.launchHome();
     this.PageFactory = new PageFactory(driver)
     this.HomePage = this.PageFactory.HomePage;

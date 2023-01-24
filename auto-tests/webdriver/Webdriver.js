@@ -10,23 +10,46 @@ const { isUndefined } = require('lodash');
 
 class Webdriver {
 
-    constructor(){
-        const screen = {
-            width: 1920,
-            height: 1080
-        };
-        if(config.headless){
-            this.driver = new Builder()
-            .forBrowser('chrome')
-            .setChromeOptions(new chrome.Options().headless().windowSize(screen))
-            .build();
-        }else{
-            this.driver = new Builder()
-            .forBrowser('chrome')
-            .setChromeOptions(new chrome.Options().windowSize(screen))
-            .build();
+    async init(){
+        const browser = config.browser
+
+        switch (browser) {
+            case "chrome":
+                await this.initChrome();
+                break;
+            case "firefox":
+                await this.initFireFox();
+                break;
+            default:
+                break;
         }
+
         this.driver.manage().setTimeouts( { explicit: 10000 , pageLoad: 20000 , script: 15000} );
+    }   
+    
+
+    async initChrome(){
+        let builder = new Builder().forBrowser(config.browser);
+
+        let options = new chrome.Options();
+        if(config.headless){
+            options = options.headless();
+        }
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--start-maximized");
+        options.addArguments("--no-sandbox");
+        options.addArguments("ignore-certificate-errors")
+
+        this.driver = builder.setChromeOptions(options).build();
+
+    }
+    
+        
+
+    async initFireFox(){
+        //to add Firefox launch and options
+        let builder = new Builder().forBrowser(config.browser)
+        this.driver = builder.build();
     }
 
     async launchHome(){
@@ -42,7 +65,7 @@ class Webdriver {
 
         await this.driver.findElement(By.id(id))
     }
-    // Needs work not working as thought
+    // Needs work TODo
     async findElementByCss(selector){
         let element;
         try {
@@ -68,7 +91,7 @@ class Webdriver {
             console.error(error + 'Error in xpath for findElementByXpath Webdriver')
         }
     }
-
+    // Working Do i need the above (probably). Below needs error handaling
     async clickElement(xpath){
         this.driver.findElement(By.xpath(xpath)).click();
     }
@@ -82,7 +105,6 @@ class Webdriver {
         await this.driver.wait(until.urlContains(urlSubstring));
     }
 
-    
 }
 
 module.exports = Webdriver
