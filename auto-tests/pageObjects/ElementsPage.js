@@ -5,6 +5,7 @@ class ElementsPage extends BasePage{
 
     pageUrl = 'https://demoqa.com/elements';
     pageUrlSubString = 'elements';
+    textBoxUrlSubString = 'text-box';
     textBoxMenuItemId = 'item-0';
     checkBoxMenuItemId = 'item-1';
     radioButtonItemId = 'item-2';
