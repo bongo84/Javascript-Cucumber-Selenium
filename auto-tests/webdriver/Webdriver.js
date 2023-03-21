@@ -57,6 +57,10 @@ class Webdriver {
         await this.driver.get(config.homeUrl).wait(until.urlIs(config.homeUrl));
     }
 
+    async navigateToPage(pageUrl){
+        await this.driver.navigate(pageUrl);
+    }
+
     async quit(){
         await this.driver.quit();
     }

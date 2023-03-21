@@ -9,7 +9,7 @@ Feature: Demo QA Site Elements Page has the correct menu items available
         When the user goes to the elements page 
         Then the menu item <string> is displayed
 
-    @test-ui
+    @test-ui-2
     Scenario: The elements page title is correct
         Given that I am at the DemoQA home page
         When the user goes to the elements page
