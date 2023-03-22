@@ -58,7 +58,7 @@ class Webdriver {
     }
 
     async navigateToPage(pageUrl){
-        await this.driver.navigate(pageUrl);
+        await this.driver.get(pageUrl);
     }
 
     async quit(){
