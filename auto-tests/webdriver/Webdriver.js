@@ -120,6 +120,12 @@ class Webdriver {
         await this.driver.wait(until.urlContains(urlSubstring));
     }
 
+    async getText(xpath){
+        let element = await this.findElementByXpath(xpath);
+        return element.getText();
+        
+    }
+
 }
 
 module.exports = Webdriver

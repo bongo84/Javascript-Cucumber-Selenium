@@ -33,6 +33,10 @@ class BasePage {
         await this.driver.clickElementById(id);
     }
 
+    async getText(xpath){
+        return await this.driver.getText(xpath);
+    }
+
 
 
 }
