@@ -9,6 +9,7 @@ const AlertsPage = require('./AlertsPage');
 const WidgetsPage = require('./Widgets');
 const InteractionsPage = require('./InteractionsPage');
 const BookStorePage = require('./BookStorePage');
+const TextBoxPage = require('./TextBoxPage')
 
 class PageFactory {
     
@@ -21,6 +22,7 @@ class PageFactory {
         this.WidgetsPage = new WidgetsPage(this.driver);
         this.InteractionPage = new InteractionsPage(this.driver);
         this.BookStorePage = new BookStorePage(this.driver);
+        this.TextBoxPage = new TextBoxPage(this.driver);
     }
 
     

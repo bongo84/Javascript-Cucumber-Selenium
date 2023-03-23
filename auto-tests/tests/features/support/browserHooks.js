@@ -27,6 +27,7 @@ Before(async function(){
     this.WidgetsPage = this.PageFactory.WidgetsPage;
     this.InteractionsPage = this.PageFactory.InteractionPage;
     this.BookStorePage = this.PageFactory.BookStorePage;
+    this.TextBoxPage = this.PageFactory.TextBoxPage;
 
 })
 
