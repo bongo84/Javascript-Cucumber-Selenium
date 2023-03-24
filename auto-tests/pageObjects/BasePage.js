@@ -25,7 +25,7 @@ class BasePage {
         await this.driver.navigateToPage(pageUrl);
     }
 
-    async clickElementXpath(xpath){
+    async ClickByXpath(xpath){
         await this.driver.clickElementByXpath(xpath);
     }
 

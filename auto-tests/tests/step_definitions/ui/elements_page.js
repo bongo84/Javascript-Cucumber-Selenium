@@ -8,7 +8,7 @@ Given('the user clicks the <string> elements page menu item', async function(tab
     switch (value.menuItem) {
         case "textBox":
             //click elementsXpath shouldnt be here should have a function in ElementPage to click the textboxMenuItem
-            await this.ElementsPage.clickElementXpath(this.ElementsPage.textBoxMenuItemXpath);
+            await this.ElementsPage.ClickByXpath(this.ElementsPage.textBoxMenuItemXpath);
             await this.ElementsPage.waitForPageToLoad(this.TextBoxPage.pageUrlSubString)
             break;
 
