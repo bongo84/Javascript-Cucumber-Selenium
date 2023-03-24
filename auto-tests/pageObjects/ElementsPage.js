@@ -8,7 +8,6 @@ class ElementsPage extends BasePage{
     textBoxUrlSubString = 'text-box';
     textBoxMenuItemXpath = '//*[@id="item-0"]/span';
     textBoxPageTitleXpath = '//*[@id="app"]/div/div/div[1]/div';
-    textBoxPageTitleString = 'Text Box'
     checkBoxMenuItemId = 'item-1';
     radioButtonItemId = 'item-2';
     webTabletsItemId = 'item-3';
@@ -21,10 +20,6 @@ class ElementsPage extends BasePage{
     constructor(driver){
         super();
         this.driver = driver
-    }
-
-    async getTextBoxTitle(){
-        return await this.getText(this.textBoxPageTitleXpath)
     }
 
 }

@@ -28,6 +28,7 @@ Before(async function(){
     this.InteractionsPage = this.PageFactory.InteractionPage;
     this.BookStorePage = this.PageFactory.BookStorePage;
     this.TextBoxPage = this.PageFactory.TextBoxPage;
+    this.CheckBoxMenuPage = this.PageFactory.CheckBoxMenuPage;
 
 })
 

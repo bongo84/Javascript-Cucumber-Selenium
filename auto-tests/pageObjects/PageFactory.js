@@ -10,6 +10,7 @@ const WidgetsPage = require('./Widgets');
 const InteractionsPage = require('./InteractionsPage');
 const BookStorePage = require('./BookStorePage');
 const TextBoxPage = require('./TextBoxPage')
+const CheckBoxMenuPage = require('./CheckBoxMenuPage');
 
 class PageFactory {
     
@@ -23,6 +24,7 @@ class PageFactory {
         this.InteractionPage = new InteractionsPage(this.driver);
         this.BookStorePage = new BookStorePage(this.driver);
         this.TextBoxPage = new TextBoxPage(this.driver);
+        this.CheckBoxMenuPage = new CheckBoxMenuPage(this.driver);
     }
 
     

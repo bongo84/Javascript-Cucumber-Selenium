@@ -25,11 +25,11 @@ class BasePage {
         await this.driver.navigateToPage(pageUrl);
     }
 
-    async ClickByXpath(xpath){
+    async clickByXpath(xpath){
         await this.driver.clickElementByXpath(xpath);
     }
 
-    async clickElementId(id){
+    async clickById(id){
         await this.driver.clickElementById(id);
     }
 

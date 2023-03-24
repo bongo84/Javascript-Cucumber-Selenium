@@ -104,11 +104,11 @@ class Webdriver {
     }
     // Working Do i need the above (probably). Below needs error handaling
     async clickElementByXpath(xpath){
-        this.driver.findElement(By.xpath(xpath)).click();
+        await this.driver.findElement(By.xpath(xpath)).click();
     }
 
     async clickElementById(id){
-        this.driver.findElement(By.id(id)).click();
+        await this.driver.findElement(By.id(id)).click();
     }
 
     async getPageUrl(){

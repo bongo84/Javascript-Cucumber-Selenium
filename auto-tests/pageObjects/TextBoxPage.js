@@ -1,6 +1,6 @@
 const BasePage = require("./BasePage");
 
-
+//There is an argument here that we have the textBox page as a helper class instead i.e TextBoxMenuHelper
 class TextBoxPage extends BasePage{
 
     pageUrl = 'https://demoqa.com/text-box';

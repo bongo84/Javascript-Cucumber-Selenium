@@ -12,28 +12,28 @@ When('the user clicks the <string> menu item' , async function(table){
     
     switch (value.pageName) {
         case "elements":
-            await this.HomePage.ClickByXpath(this.HomePage.elementsMenuXpath);
+            await this.HomePage.clickByXpath(this.HomePage.elementsMenuXpath);
             await this.ElementsPage.waitForPageToLoad(this.ElementsPage.pageUrlSubString);
             break;
         case "forms":
-            await this.HomePage.ClickByXpath(this.HomePage.formsMenu);
+            await this.HomePage.clickByXpath(this.HomePage.formsMenu);
             await this.FormsPage.waitForPageToLoad(this.FormsPage.pageUrlSubString)
             break;
         case "alerts":
-            await this.HomePage.ClickByXpath(this.HomePage.alertsFrameMenu);
+            await this.HomePage.clickByXpath(this.HomePage.alertsFrameMenu);
             await this.AlertsPage.waitForPageToLoad(this.AlertsPage.pageUrlSubString);
             break;
         case "widgets":
-            await this.HomePage.ClickByXpath(this.HomePage.widgetMenu);
+            await this.HomePage.clickByXpath(this.HomePage.widgetMenu);
             await this.AlertsPage.waitForPageToLoad(this.WidgetsPage.pageUrlSubString);
             break;
         case "interactions":
-            await this.HomePage.ClickByXpath(this.HomePage.interactionsMenu);
+            await this.HomePage.clickByXpath(this.HomePage.interactionsMenu);
             await this.AlertsPage.waitForPageToLoad(this.InteractionsPage.pageUrlSubString);
             break;
         case "books":
             await this.HomePage.scrollToPageElement(this.HomePage.bookStoreAppMenu);
-            await this.HomePage.ClickByXpath(this.HomePage.bookStoreAppMenu);
+            await this.HomePage.clickByXpath(this.HomePage.bookStoreAppMenu);
             await this.AlertsPage.waitForPageToLoad(this.BookStorePage.pageUrlSubString);
             break;
     
