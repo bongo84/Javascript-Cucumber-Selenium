@@ -4,11 +4,11 @@ Feature: Demo QA Site Elements Page has the correct menu items available
     when initally loaded.
     
     @test-ui
-    @pending
+    
     Scenario: The elements page has the correct Title displayed
         Given that I am at the DemoQA home page
         When the user goes to the elements page
-        Then the title "Elements Page" is displayed
+        Then the title "Elements" is displayed
         
 
     @ui-regression

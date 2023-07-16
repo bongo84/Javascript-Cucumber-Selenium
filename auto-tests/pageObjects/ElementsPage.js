@@ -16,10 +16,15 @@ class ElementsPage extends BasePage{
     brokenLinksItemId = 'item-6';
     uploadDownLoadItemId = 'item-7';
     dynamicPropItemId = 'item-8';
+    elementsPageText = '/html/body/div[2]/div/div/div[1]/div';
 
     constructor(driver){
         super();
         this.driver = driver
+    }
+
+    getPageTitleText(){
+        this.driver.getText(this.elementsPageText);
     }
 
 }
