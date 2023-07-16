@@ -46,5 +46,6 @@ Then('the menu item <string> is displayed', async function(table){
 });
 
 Then('the title {string} is displayed', async function (string) {
-    expect(this.ElementsPage.getPageTitleText()).to.be.equal(string)
+    const title = await this.ElementsPage.getPageTitleText();
+    expect(title).to.be.equal(string);
 });

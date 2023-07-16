@@ -23,8 +23,8 @@ class ElementsPage extends BasePage{
         this.driver = driver
     }
 
-    getPageTitleText(){
-        this.driver.getText(this.elementsPageText);
+    async getPageTitleText(){
+        return await this.driver.getElementText("main-header");
     }
 
 }

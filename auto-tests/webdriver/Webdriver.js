@@ -123,7 +123,10 @@ class Webdriver {
     async getText(xpath){
         let element = await this.findElementByXpath(xpath);
         return element.getText();
-        
+    }
+
+    async getElementText(nameOfClass){
+        return await this.driver.findElement(By.className(nameOfClass)).getText();
     }
 
 }
