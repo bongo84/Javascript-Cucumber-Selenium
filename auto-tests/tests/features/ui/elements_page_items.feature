@@ -1,7 +1,7 @@
 Feature: Demo QA Site Elements Page has the correct menu items available
 
     Ensure that the demoQA website elements page has the correct items available 
-    when initally loaded.
+    when initally loaded. Ticket MHT-22
     
     @test-ui
     Scenario: The elements page has the correct Title displayed
