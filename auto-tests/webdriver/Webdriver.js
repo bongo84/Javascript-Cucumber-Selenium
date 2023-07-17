@@ -57,6 +57,10 @@ class Webdriver {
         await this.driver.get(config.homeUrl).wait(until.urlIs(config.homeUrl));
     }
 
+    async navigateToPage(pageUrl){
+        await this.driver.get(pageUrl);
+    }
+
     async quit(){
         await this.driver.quit();
     }
@@ -99,8 +103,12 @@ class Webdriver {
         await actions.move({ origin: element }).perform();
     }
     // Working Do i need the above (probably). Below needs error handaling
-    async clickElement(xpath){
-        this.driver.findElement(By.xpath(xpath)).click();
+    async clickElementByXpath(xpath){
+        await this.driver.findElement(By.xpath(xpath)).click();
+    }
+
+    async clickElementById(id){
+        await this.driver.findElement(By.id(id)).click();
     }
 
     async getPageUrl(){
@@ -110,6 +118,15 @@ class Webdriver {
 
     async waitForPageToLoad(urlSubstring){
         await this.driver.wait(until.urlContains(urlSubstring));
+    }
+
+    async getText(xpath){
+        let element = await this.findElementByXpath(xpath);
+        return element.getText();
+    }
+
+    async getElementText(nameOfClass){
+        return await this.driver.findElement(By.className(nameOfClass)).getText();
     }
 
 }

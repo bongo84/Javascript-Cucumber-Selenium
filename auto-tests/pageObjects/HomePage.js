@@ -16,9 +16,7 @@ class HomePage extends BasePage{
         this.driver = driver;
     }
 
-    async clickMenuItem(menuItemSelector){
-        await this.driver.clickElement(menuItemSelector);
-    }
+    
 
 }
 

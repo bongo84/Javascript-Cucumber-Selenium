@@ -21,6 +21,22 @@ class BasePage {
         await this.driver.scrollToPageElement(xpath);
     }
 
+    async navigateToPage(pageUrl){
+        await this.driver.navigateToPage(pageUrl);
+    }
+
+    async clickByXpath(xpath){
+        await this.driver.clickElementByXpath(xpath);
+    }
+
+    async clickById(id){
+        await this.driver.clickElementById(id);
+    }
+
+    async getText(xpath){
+        return await this.driver.getText(xpath);
+    }
+
 
 
 }
