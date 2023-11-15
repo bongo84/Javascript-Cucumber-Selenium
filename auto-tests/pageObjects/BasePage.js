@@ -41,6 +41,15 @@ class BasePage {
         await this.driver.setElementText(selector, textInput);
     }
 
+    async clickRadioButton(selector){
+        await this.driver.clickElementByXpath(selector);
+    }
+
+    async getRadioButtonValue(selector){
+        const radioBttn = await this.driver.findElementByXpath(selector);
+        return radioBttn.getAttribute("checked");
+    }
+
 
 
 }

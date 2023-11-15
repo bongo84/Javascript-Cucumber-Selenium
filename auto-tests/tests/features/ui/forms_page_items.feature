@@ -20,7 +20,7 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         Then I am still at the Forms Page
         | pageTitle | Practice Form | 
 
-    @test-ui
+    @ui-regression
     Scenario: The student Registration Form can accept an email address
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
@@ -31,12 +31,14 @@ Feature: Demo QA Site Forms Page has the correct menu items available
 
     @ui-regression
     Scenario: The student Registration Form can select different genders
-        Given I am at the Forms page of DemoQA
-        When the user enters clicks the <gender>
-        | genderRadioBtn | Male   |
-        | genderRadioBtn | Female |
-        | genderRadioBtn | Other  |
-        Then the radioBtn is set to true
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        Then user can click the radio buttons
+        | button | value |
+        | Male   | true  |
+        | Female | true  |
+        | Other  | true  |
+        
 
     @ui-regression
     Scenario: The student Registration Form can enter a valid phone number

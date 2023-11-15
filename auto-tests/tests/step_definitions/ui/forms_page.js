@@ -43,3 +43,23 @@ When('the user enters the email address <string>', async function(table){
     await this.FormsPage.setElementText(this.FormsPage.emailTextBox, email);
 
 });
+
+Then('user can click the radio buttons',async function(table){
+    let buttons = table.hashes();
+    let genders = [buttons[0].button,buttons[1].button,buttons[2].button ];
+    genders.forEach(element => async function(){
+        if(element == "Male"){
+            await this.FormsPage.clickRadioButton(this.FormsPage.maleRadioButton);
+            console.log(element)
+        }
+        if(element == "Female"){
+            await this.FormsPage.clickRadioButton(this.FormsPage.femaleRadioButton);
+            console.log(element)
+        }
+        if(element == "Other"){
+            await this.FormsPage.clickRadioButton(this.FormsPage.otherRadioButton);
+            console.log(element)
+        }
+    });        
+
+})
