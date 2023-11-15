@@ -2,21 +2,16 @@ const {Given, When, Then} = require('cucumber')
 const {expect, assert} = require('chai')
 const config = require('../../../config.json');
 
-Given('the user clicks the <string> forms page menu item', async function(table){
-    let value = table.rowsHash();
+Given('that I am at the Forms Practice page', async function(){
+    await this.FormsPage.navigateToPage(config.homeUrl + this.FormsPage.practiceFormUrl);
+});
 
-    switch (value.menuItem) {
-        case "textBox":
-            //click elementsXpath shouldnt be here should have a function in ElementPage to click the textboxMenuItem
-            await this.ElementsPage.clickByXpath(this.ElementsPage.textBoxMenuItemXpath);
-            await this.TextBoxPage.waitForPageToLoad(this.TextBoxPage.pageUrlSubString);
-            break;
-        case "Check Box":
-            await this.ElementsPage.clickById(this.ElementsPage.checkBoxMenuItemId);
-            await this.CheckBoxMenuPage.waitForPageToLoad(this.CheckBoxMenuPage.pageUrlSubString);
-            break;
-        default:
-            break;
-    }
+When('the user goes to the practice form page', async function(){
+    await this.FormsPage.navigateToPage(config.homeUrl + this.FormsPage.practiceFormUrl);
+    await this.FormsPage.waitForPageToLoad(this.FormsPage.practiceFormUrl);
+});
 
+Then('the Forms title {string} is displayed', async function (string) {
+    const title = await this.FormsPage.getPageTitleText();
+    expect(title).to.be.equal(string);
 });

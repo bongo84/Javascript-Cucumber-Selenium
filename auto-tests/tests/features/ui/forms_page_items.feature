@@ -6,8 +6,19 @@ Feature: Demo QA Site Forms Page has the correct menu items available
     @ui-regression
     Scenario: The forms page has the correct Title displayed
         Given that I am at the DemoQA home page
-        When the user goes to the forms page
-        Then the title "Forms" is displayed
+        When the user goes to the practice form page
+        Then the Forms title "Practice Form" is displayed
+
+    @test-ui
+    Scenario: The forms page has the correct Title displayed
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        And enters the <firstName>
+        | firstName | David |
+        And enters the <lastName>
+        | lastName | Murphy |
+        Then the name fields contains <name>
+        | name | David Murphy |
 
     @ui-regression
     Scenario: The student Registration Form can accept the name
