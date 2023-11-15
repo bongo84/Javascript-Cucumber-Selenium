@@ -8,6 +8,7 @@ class FormsPage extends BasePage{
     practiceFormUrl = 'automation-practice-form';
     firstNameTextBox = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[1]/div[2]/input';
     lastNameTextBox = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[1]/div[4]/input';
+    emailTextBox = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[2]/div[2]/input';
 
     constructor(driver){
         super();

@@ -20,13 +20,14 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         Then I am still at the Forms Page
         | pageTitle | Practice Form | 
 
-    @ui-regression
+    @test-ui
     Scenario: The student Registration Form can accept an email address
-        Given I am at the Forms page of DemoQA
-        When the user enters the email address <emailAddress>
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        And the user enters the email address <string>
         | email | tester@hotmail.co.uk |
-        And the user clicks away from the field
-        Then the email address entered is still present
+        Then I am still at the Forms Page
+        | pageTitle | Practice Form | 
 
     @ui-regression
     Scenario: The student Registration Form can select different genders

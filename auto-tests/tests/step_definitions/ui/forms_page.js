@@ -36,3 +36,10 @@ Then('I am still at the Forms Page', async function (table) {
     expect(title).to.be.equal(pageTitle);
 
 });
+
+When('the user enters the email address <string>', async function(table){
+    let value = table.rowsHash();
+    let email = value.email;
+    await this.FormsPage.setElementText(this.FormsPage.emailTextBox, email);
+
+});
