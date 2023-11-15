@@ -9,24 +9,16 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         When the user goes to the practice form page
         Then the Forms title "Practice Form" is displayed
 
-    @test-ui
-    Scenario: The forms page has the correct Title displayed
+    @ui-regression
+    Scenario: The student Registration Form can accept the name fields
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
-        And enters the <firstName>
+        And enters the first name <string>
         | firstName | David |
-        And enters the <lastName>
+        And enters the last name <string>
         | lastName | Murphy |
-        Then the name fields contains <name>
-        | name | David Murphy |
-
-    @ui-regression
-    Scenario: The student Registration Form can accept the name
-        Given I am at the Forms page of DemoQA
-        When the user enters the <name>
-        | name | David Murphy |
-        And the user clicks away from the field
-        Then the name entered is still present in the UI 
+        Then I am still at the Forms Page
+        | pageTitle | Practice Form | 
 
     @ui-regression
     Scenario: The student Registration Form can accept an email address
