@@ -129,6 +129,24 @@ class Webdriver {
         return await this.driver.findElement(By.className(nameOfClass)).getText();
     }
 
+    async setElementText(selectorXpath, text){
+        const element = await this.findElementByXpath(selectorXpath);
+        element.sendKeys(text);
+    }
+
+    async getAttribute(selector, attribute){
+        let element =  await this.findElementByXpath(selector);
+        let returnAttributeValue = await element.getAttribute(attribute);
+        return returnAttributeValue;
+    }
+
+    async isElementDisplayed(selector){
+        let elementDisplayed = await this.findElementByXpath(selector);
+        return elementDisplayed.isDisplayed();
+    }
+
+    
+
 }
 
 module.exports = Webdriver

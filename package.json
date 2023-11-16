@@ -18,8 +18,9 @@
     "sinon-chai": "^2.5.0"
   },
   "dependencies": {
-    "chromedriver": "^114.0.0",
+    "chromedriver": "^119.0.0",
     "q": "^1.0.1",
     "selenium-webdriver": "^4.7.1"
-  }
+  },
+  "engines": {"node": ">=18"}
 }

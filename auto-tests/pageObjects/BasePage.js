@@ -3,6 +3,8 @@
  * Error when using this need to review understanding of inheritance and super construcor use
  */
 
+const { Key } = require("selenium-webdriver");
+
 class BasePage {
     
     constructor(driver){
@@ -33,8 +35,35 @@ class BasePage {
         await this.driver.clickElementById(id);
     }
 
-    async getText(xpath){
-        return await this.driver.getText(xpath);
+    async getText(selector){
+        return await this.driver.getText(selector);
+    }
+
+    async setElementText(selector, textInput){
+        await this.driver.setElementText(selector, textInput);
+    }
+
+    async clickRadioButton(selector){
+        await this.driver.clickElementByXpath(selector);
+    }
+
+    async getRadioButtonValue(selector){
+        const radioBttn = await this.driver.findElementByXpath(selector);
+        return radioBttn.getAttribute("checked");
+    }
+
+    async getAttribute(selector,attribute){
+        return await this.driver.getAttribute(selector,attribute);
+    }
+
+    async isElementDisplayed(selector){
+        return await this.driver.isElementDisplayed(selector)
+    }
+
+    async selectAllDate(selector){
+        let element = await this.driver.findElementByXpath(selector);
+        //await element.sendKeys(Key.chord(Keys.CONTROL, "a"));
+        await element.sendKeys(Key.chord(Key.COMMAND, "a"));
     }
 
 

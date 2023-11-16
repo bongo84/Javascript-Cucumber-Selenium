@@ -40,6 +40,7 @@ Then('the menu item <string> is displayed', async function(table){
             expect(checkBoxTitle).to.be.equal(this.CheckBoxMenuPage.checkBoxPageTitle);
             break;
         default:
+            console.error("menu item not found");
             break;
     }
 
