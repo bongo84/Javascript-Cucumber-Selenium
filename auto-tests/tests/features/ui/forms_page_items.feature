@@ -89,11 +89,3 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         | dateOfBirth | 14 Feb 2023|
         Then the value is correct
         | dateOfBirth | 14 Feb 2023|
-
-
-    @ignore
-    Scenario: The Subjects field of the Forms page displays the correct dropdown
-        Given I am at the Forms page of DemoQA
-        When I enter a <letter>
-        | letter | a |
-        Then the correct dropdowns are displayed
