@@ -88,3 +88,11 @@ Then('the relevant field has a placeholder value as default', async function(dat
             break;
     }
 });
+
+Then('the field has max length of', async function(dataTable){
+    let testValues = dataTable.rowsHash();
+    let maxLength = testValues.maxLength;
+    let actualMaxlength = await this.FormsPage.getAttribute(this.FormsPage.phoneNumberTextBox, 'maxlength');
+
+    expect(maxLength).to.be.equal(actualMaxlength);
+});

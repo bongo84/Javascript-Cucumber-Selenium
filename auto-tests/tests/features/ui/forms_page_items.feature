@@ -57,7 +57,7 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         Then I am still at the Forms Page
         | pageTitle | Practice Form |
 
-    @test-ui
+    @ui-regression
     Scenario: The student Registration Form phone number field has a placeholder value
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
@@ -65,12 +65,14 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         | value | Mobile Number |
         | field | phone         |
 
-    @ui-regression
+    @test-ui
     Scenario: The student Registration Form does not accept a number of 11 digits
-        Given I am at the Forms page of DemoQA
-        When the user enters the phone <number>
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        And the user enters the phone number
         | validNumber | 074663477471 |
-        Then the field does NOT accept the number
+        Then the field has max length of
+        | maxLength | 10 |
 
     @ui-regression
     Scenario: The student Reg Form displays a calendar for when DOB field is clicked
