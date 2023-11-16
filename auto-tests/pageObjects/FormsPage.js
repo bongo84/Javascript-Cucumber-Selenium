@@ -12,6 +12,7 @@ class FormsPage extends BasePage{
     maleRadioButton = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[3]/div[2]/div[1]';
     femaleRadioButton = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[3]/div[2]/div[2]/label';
     otherRadioButton = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[3]/div[2]/div[3]/label';
+    phoneNumberTextBox = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[4]/div[2]/input';
 
     constructor(driver){
         super();

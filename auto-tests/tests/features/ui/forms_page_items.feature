@@ -13,9 +13,9 @@ Feature: Demo QA Site Forms Page has the correct menu items available
     Scenario: The student Registration Form can accept the name fields
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
-        And enters the first name <string>
+        And enters the first name
         | firstName | David |
-        And enters the last name <string>
+        And enters the last name
         | lastName | Murphy |
         Then I am still at the Forms Page
         | pageTitle | Practice Form | 
@@ -24,10 +24,18 @@ Feature: Demo QA Site Forms Page has the correct menu items available
     Scenario: The student Registration Form can accept an email address
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
-        And the user enters the email address <string>
+        And the user enters the email address
         | email | tester@hotmail.co.uk |
         Then I am still at the Forms Page
         | pageTitle | Practice Form | 
+
+    @ui-regression
+    Scenario: The student Registration Form email field has a placeholder value
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        Then the relevant field has a placeholder value as default
+        | value | Mobile Number |
+        | field | email         |
 
     @ui-regression
     Scenario: The student Registration Form can select different genders
@@ -42,10 +50,20 @@ Feature: Demo QA Site Forms Page has the correct menu items available
 
     @ui-regression
     Scenario: The student Registration Form can enter a valid phone number
-        Given I am at the Forms page of DemoQA
-        When the user enters the phone <number>
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        And the user enters the phone number
         | validNumber | 07466347747 |
-        Then the field accepts the number
+        Then I am still at the Forms Page
+        | pageTitle | Practice Form |
+
+    @ui-regression
+    Scenario: The student Registration Form phone number field has a placeholder value
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        Then the relevant field has a placeholder value as default
+        | value | Mobile Number |
+        | field | phoneNumber   |
 
     @ui-regression
     Scenario: The student Registration Form does not accept a number of 11 digits

@@ -6,13 +6,13 @@ Given('that I am at the Forms Practice page', async function(){
     await this.FormsPage.navigateToPage(config.homeUrl + this.FormsPage.practiceFormUrl);
 });
 
-When('enters the first name <string>', async function (table){
+When('enters the first name', async function (table){
     let value = table.rowsHash();
     const firstName = value.firstName;
     await this.FormsPage.setElementText(this.FormsPage.firstNameTextBox, firstName);
 });
 
-When('enters the last name <string>', async function (table){
+When('enters the last name', async function (table){
     let value = table.rowsHash();
     const lastName = value.lastName;
     await this.FormsPage.setElementText(this.FormsPage.lastNameTextBox, lastName);
@@ -37,7 +37,7 @@ Then('I am still at the Forms Page', async function (table) {
 
 });
 
-When('the user enters the email address <string>', async function(table){
+When('the user enters the email address', async function(table){
     let value = table.rowsHash();
     let email = value.email;
     await this.FormsPage.setElementText(this.FormsPage.emailTextBox, email);
@@ -61,5 +61,11 @@ Then('user can click the radio buttons',async function(table){
             console.log(element)
         }
     });        
+
+});
+
+When('the user enters the phone number', async function(dataTable){
+    let phoneNumber = dataTable.rowsHash().validNumber;
+    await this.FormsPage.setElementText(this.FormsPage.phoneNumberTextBox, phoneNumber);
 
 })
