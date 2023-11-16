@@ -106,3 +106,16 @@ Then('the calendar is displayed', async function(){
     let displayed = await this.FormsPage.isElementDisplayed(this.FormsPage.monthSelectCalendar);
     expect(displayed).to.be.equal(true);
 });
+
+When('I enter a valid date of birth', async function(dataTable){
+    let testData = dataTable.rowsHash();
+    await this.FormsPage.selectAllDate(this.FormsPage.dateOfBirthField);
+    await this.FormsPage.setElementText(this.FormsPage.dateOfBirthField, testData.dateOfBirth);
+});
+
+Then('the value is correct', async function(dataTable){
+    let dateOfBirth = dataTable.rowsHash().dateOfBirth;
+    let actualDateOfbirth = await this.FormsPage.getAttribute(this.FormsPage.dateOfBirthField, 'value');
+
+    expect(dateOfBirth).to.be.equal(actualDateOfbirth);
+});

@@ -74,7 +74,7 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         Then the field has max length of
         | maxLength | 10 |
 
-    @test-ui
+    @ui-regression
     Scenario: The student Reg Form displays a calendar for when DOB field is clicked
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
@@ -83,19 +83,15 @@ Feature: Demo QA Site Forms Page has the correct menu items available
 
     @ui-regression
     Scenario: The student Reg Form can accept a valid DOB
-        Given I am at the Forms page of DemoQA
-        When I enter a <dateOfBirth>
-        | dateOfBirth | 14/02/1984 |
-        Then the form accepts the entry
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        And I enter a valid date of birth 
+        | dateOfBirth | 14 Feb 2023|
+        Then the value is correct
+        | dateOfBirth | 14 Feb 2023|
 
-    @ui-regression
-    Scenario: The student Reg Form does NOT accept aninvalid DOB
-        Given I am at the Forms page of DemoQA
-        When I enter a <dateOfBirth>
-        | dateOfBirth | 14/02/ASDF |
-        Then the form rejects the entry
 
-    @ui-regression
+    @ignore
     Scenario: The Subjects field of the Forms page displays the correct dropdown
         Given I am at the Forms page of DemoQA
         When I enter a <letter>

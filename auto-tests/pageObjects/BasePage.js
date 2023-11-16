@@ -3,6 +3,8 @@
  * Error when using this need to review understanding of inheritance and super construcor use
  */
 
+const { Key } = require("selenium-webdriver");
+
 class BasePage {
     
     constructor(driver){
@@ -56,6 +58,12 @@ class BasePage {
 
     async isElementDisplayed(selector){
         return await this.driver.isElementDisplayed(selector)
+    }
+
+    async selectAllDate(selector){
+        let element = await this.driver.findElementByXpath(selector);
+        //await element.sendKeys(Key.chord(Keys.CONTROL, "a"));
+        await element.sendKeys(Key.chord(Key.COMMAND, "a"));
     }
 
 

@@ -145,6 +145,8 @@ class Webdriver {
         return elementDisplayed.isDisplayed();
     }
 
+    
+
 }
 
 module.exports = Webdriver
