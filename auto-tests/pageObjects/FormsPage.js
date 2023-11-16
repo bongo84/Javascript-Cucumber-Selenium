@@ -13,6 +13,9 @@ class FormsPage extends BasePage{
     femaleRadioButton = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[3]/div[2]/div[2]/label';
     otherRadioButton = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[3]/div[2]/div[3]/label';
     phoneNumberTextBox = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[4]/div[2]/input';
+    dateOfBirthField = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div[2]/div[1]/div/input';
+    monthSelectCalendar = '/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div[2]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]/div[1]';
+
 
     constructor(driver){
         super();

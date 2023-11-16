@@ -140,6 +140,11 @@ class Webdriver {
         return returnAttributeValue;
     }
 
+    async isElementDisplayed(selector){
+        let elementDisplayed = await this.findElementByXpath(selector);
+        return elementDisplayed.isDisplayed();
+    }
+
 }
 
 module.exports = Webdriver

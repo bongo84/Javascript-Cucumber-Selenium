@@ -96,3 +96,13 @@ Then('the field has max length of', async function(dataTable){
 
     expect(maxLength).to.be.equal(actualMaxlength);
 });
+
+When('the user clicks the DOB field', async function(){
+    await this.FormsPage.clickByXpath(this.FormsPage.dateOfBirthField);
+    
+});
+
+Then('the calendar is displayed', async function(){
+    let displayed = await this.FormsPage.isElementDisplayed(this.FormsPage.monthSelectCalendar);
+    expect(displayed).to.be.equal(true);
+});

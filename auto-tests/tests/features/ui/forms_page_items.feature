@@ -65,7 +65,7 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         | value | Mobile Number |
         | field | phone         |
 
-    @test-ui
+    @ui-regression
     Scenario: The student Registration Form does not accept a number of 11 digits
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
@@ -74,11 +74,12 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         Then the field has max length of
         | maxLength | 10 |
 
-    @ui-regression
+    @test-ui
     Scenario: The student Reg Form displays a calendar for when DOB field is clicked
-        Given I am at the Forms page of DemoQA
-        When the user clicks the DOB field
-        Then the DOB calender is displayed
+        Given that I am at the DemoQA home page
+        When the user goes to the practice form page
+        And the user clicks the DOB field
+        Then the calendar is displayed
 
     @ui-regression
     Scenario: The student Reg Form can accept a valid DOB

@@ -54,6 +54,10 @@ class BasePage {
         return await this.driver.getAttribute(selector,attribute);
     }
 
+    async isElementDisplayed(selector){
+        return await this.driver.isElementDisplayed(selector)
+    }
+
 
 
 }
