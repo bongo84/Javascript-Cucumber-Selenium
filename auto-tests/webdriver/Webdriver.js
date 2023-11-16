@@ -134,6 +134,12 @@ class Webdriver {
         element.sendKeys(text);
     }
 
+    async getAttribute(selector, attribute){
+        let element =  await this.findElementByXpath(selector);
+        let returnAttributeValue = await element.getAttribute(attribute);
+        return returnAttributeValue;
+    }
+
 }
 
 module.exports = Webdriver

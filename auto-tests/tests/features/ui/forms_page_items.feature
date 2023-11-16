@@ -34,8 +34,8 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
         Then the relevant field has a placeholder value as default
-        | value | Mobile Number |
-        | field | email         |
+        | value | name@example.com |
+        | field | email            |
 
     @ui-regression
     Scenario: The student Registration Form can select different genders
@@ -57,13 +57,13 @@ Feature: Demo QA Site Forms Page has the correct menu items available
         Then I am still at the Forms Page
         | pageTitle | Practice Form |
 
-    @ui-regression
+    @test-ui
     Scenario: The student Registration Form phone number field has a placeholder value
         Given that I am at the DemoQA home page
         When the user goes to the practice form page
         Then the relevant field has a placeholder value as default
         | value | Mobile Number |
-        | field | phoneNumber   |
+        | field | phone         |
 
     @ui-regression
     Scenario: The student Registration Form does not accept a number of 11 digits

@@ -58,6 +58,7 @@ Then('user can click the radio buttons',async function(table){
         }
         if(element == "Other"){
             await this.FormsPage.clickRadioButton(this.FormsPage.otherRadioButton);
+            //TODO could have a webdriver IsSelected method around here to see if this works
             console.log(element)
         }
     });        
@@ -68,4 +69,22 @@ When('the user enters the phone number', async function(dataTable){
     let phoneNumber = dataTable.rowsHash().validNumber;
     await this.FormsPage.setElementText(this.FormsPage.phoneNumberTextBox, phoneNumber);
 
-})
+});
+
+Then('the relevant field has a placeholder value as default', async function(dataTable){
+    let testParams = dataTable.rowsHash();
+
+    switch (testParams.field) {
+        case "email":
+            let emailPlaceHolder = await this.FormsPage.getAttribute(this.FormsPage.emailTextBox, 'placeholder')
+            expect(emailPlaceHolder).to.be.equal(testParams.value);
+            break;
+        case "phone":
+            let phonePlaceholder = await this.FormsPage.getAttribute(this.FormsPage.phoneNumberTextBox, 'placeholder')
+            expect(phonePlaceholder).to.be.equal(testParams.value);
+            break;
+        default:
+            console.error("menu item not found");
+            break;
+    }
+});

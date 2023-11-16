@@ -50,6 +50,10 @@ class BasePage {
         return radioBttn.getAttribute("checked");
     }
 
+    async getAttribute(selector,attribute){
+        return await this.driver.getAttribute(selector,attribute);
+    }
+
 
 
 }
