@@ -40,5 +40,5 @@ jobs:
         # For posting a simple plain text message
         slack-message: "JS Test Repo Run Result: ${{ job.status }}"
       env:
-        SLACK_BOT_TOKEN: SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_BOT_TOKEN: SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
