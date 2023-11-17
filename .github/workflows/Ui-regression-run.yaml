@@ -28,7 +28,6 @@ jobs:
         cache: 'npm'
     - run: |
           VERSION_STRING="119.0.6045.123"
-          wget "https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_${VERSION_STRING}_amd64.deb"
-          sudo dpkg -i "google-chrome-stable_${VERSION_STRING}_amd64.deb"
+          npx @puppeteer/browsers install chrome@VERSION_STRING
     - run: yarn install
     - run: yarn ui-regression
