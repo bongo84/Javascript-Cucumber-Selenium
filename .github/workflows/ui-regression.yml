@@ -22,6 +22,6 @@ jobs:
       - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1.3.0
         with:
-          chrome-version: '119.x'
+          chrome-version: stable
       - run: yarn install     
       - run: yarn ui-regression
