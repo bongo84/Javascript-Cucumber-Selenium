@@ -29,7 +29,7 @@ jobs:
     - run: npx @puppeteer/browsers install chrome@119.0.6045.123
     - run: yarn install
     - run: yarn ui-regression
-    - name: Post to Slack channel
+    - name: Post to a Slack channel
       id: slack
       uses: slackapi/slack-github-action@v1.24.0
       with:
@@ -38,7 +38,7 @@ jobs:
         # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
         channel-id: 'C0667PRU0LA'
         # For posting a simple plain text message
-        slack-message: "JS Test Repo Run Result: ${{ job.status }}"
+        slack-message: "GitHub build result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
       env:
-          SLACK_BOT_TOKEN: SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
