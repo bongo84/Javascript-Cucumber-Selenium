@@ -26,8 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: |
-          VERSION_STRING="119.0.6045.123"
-          npx @puppeteer/browsers install chrome@VERSION_STRING
+    - run: npx @puppeteer/browsers install chrome@119.0.6045.123
     - run: yarn install
     - run: yarn ui-regression
