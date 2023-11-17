@@ -36,9 +36,9 @@ jobs:
         # Slack channel id, channel name, or user id to post message.
         # See also: https://api.slack.com/methods/chat.postMessage#channels
         # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
-        channel-id: 'T02N8D2S600/C0667PRU0LA'
+        channel-id: 'C0667PRU0LA'
         # For posting a simple plain text message
         slack-message: "JS Test Repo Run Result: ${{ job.status }}"
       env:
-        SLACK_BOT_TOKEN: xoxp-2756444890000-2732736568994-6234821697920-60aacbb39fec82c798a40631cc852c09
+        SLACK_BOT_TOKEN: SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
