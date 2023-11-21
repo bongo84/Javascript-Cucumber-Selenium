@@ -22,4 +22,4 @@ jobs:
         with:
           chrome-version: stable
       - run: yarn install     
-      - run: yarn test-ui
+      - run: yarn api-smoke
