@@ -3,7 +3,7 @@ Feature: Demo QA Site Forms Page has the correct menu items available
     Ensure that the demoQA website forms page has the correct items available 
     when initally loaded. Ticket MHT-25
     
-    @ui-regression
+    @test-ui
     Scenario: The forms page has the correct Title displayed
         Given that I am at the DemoQA home page
         When the user goes to the practice form page

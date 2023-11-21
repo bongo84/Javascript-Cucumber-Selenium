@@ -3,6 +3,7 @@
  * To Debug set headless false in config
  */
 const chrome = require('selenium-webdriver/chrome')
+const webdriver = require('selenium-webdriver');
 const {Builder, By, Key, until} = require('selenium-webdriver')
 const config = require('../config.json');
 const { expect } = require('chai');
@@ -29,7 +30,7 @@ class Webdriver {
     
 
     async initChrome(){
-        let builder = new Builder().forBrowser(config.browser);
+        let builder = new Builder().forBrowser(webdriver.Browser.CHROME);
 
         let options = new chrome.Options();
         if(config.headless){
@@ -38,7 +39,8 @@ class Webdriver {
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--start-maximized");
         options.addArguments("--no-sandbox");
-        options.addArguments("ignore-certificate-errors")
+        options.addArguments("ignore-certificate-errors");
+        options.setBrowserVersion("stable");
 
         this.driver = builder.setChromeOptions(options).build();
 
