@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test-ui": "./node_modules/.bin/cucumber-js --tags=@test-ui ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui --require ./auto-tests/tests/features/support/browserHooks.js",
-    "test-api": "./node_modules/.bin/cucumber-js --tags@test-api ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api",
+    "test-api": "./node_modules/.bin/cucumber-js --tags=@test-api ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api",
     "ui-regression": "./node_modules/.bin/cucumber-js --tags=@ui-regression ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui --require ./auto-tests/tests/features/support/browserHooks.js",
-    "api-regression": "./node_modules/.bin/cucumber-js --tags@api-regression ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api"
+    "api-regression": "./node_modules/.bin/cucumber-js --tags=@api-regression ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api"
   },
   "author": "Ben Waters",
   "devDependencies": {
@@ -15,12 +15,15 @@
     "chai-as-promised": "^4.1.1",
     "cucumber": "^6.0.7",
     "sinon": "1.10.3",
-    "sinon-chai": "^2.5.0"
+    "sinon-chai": "^2.5.0",
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "chromedriver": "^119.0.0",
     "q": "^1.0.1",
     "selenium-webdriver": "^4.7.1"
   },
-  "engines": {"node": ">=18"}
+  "engines": {
+    "node": ">=18"
+  }
 }
