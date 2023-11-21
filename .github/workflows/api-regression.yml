@@ -1,4 +1,4 @@
-name: UI-Regression DRAFT
+name: API - Regression DRAFT
 
 on:
   schedule:
