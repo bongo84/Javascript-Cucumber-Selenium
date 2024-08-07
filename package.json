@@ -13,6 +13,7 @@
   },
   "author": "Ben Waters",
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "chai": "^1.9.1",
     "chai-as-promised": "^4.1.1",
     "cucumber": "^6.0.7",
