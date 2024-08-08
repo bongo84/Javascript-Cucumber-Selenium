@@ -8,7 +8,8 @@ const {Before, After, setDefaultTimeout,} = require('cucumber');
 const config = require('../../../config.json');
 const Webdriver = require('../../../webdriver/Webdriver');
 const driver = new Webdriver();
-const PageFactory = require('../../../pageObjects/PageFactory')
+const PageFactory = require('../../../pageObjects/PageFactory');
+const personaHelper = require('../../../helpers/personaHelper');
 
 Before(async function(){
     
@@ -29,7 +30,7 @@ Before(async function(){
     this.BookStorePage = this.PageFactory.BookStorePage;
     this.TextBoxPage = this.PageFactory.TextBoxPage;
     this.CheckBoxMenuPage = this.PageFactory.CheckBoxMenuPage;
-
+    this.persona = personaHelper.createPersona();
 })
 
 After(async function(){

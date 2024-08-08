@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test-ui": "./node_modules/.bin/cucumber-js --tags=@test-ui ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui --require ./auto-tests/tests/features/support/browserHooks.js",
-    "test-api": "./node_modules/.bin/cucumber-js --tags=@test-api ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api",
+    "test-api": "./node_modules/.bin/cucumber-js --tags=@test-api ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api --require ./auto-tests/tests/features/support/apiHooks.js",
     "ui-regression": "./node_modules/.bin/cucumber-js --tags=@ui-regression ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui --require ./auto-tests/tests/features/support/browserHooks.js",
-    "api-regression": "./node_modules/.bin/cucumber-js --tags=@api-regression ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api",
+    "api-regression": "./node_modules/.bin/cucumber-js --tags=@api-regression ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api --require ./auto-tests/tests/features/support/apiHooks.js",
     "ui-smoke": "./node_modules/.bin/cucumber-js --tags=@ui-smoke ./auto-tests/tests/features/ui --require ./auto-tests/tests/step_definitions/ui --require ./auto-tests/tests/features/support/browserHooks.js",
     "api-smoke": "./node_modules/.bin/cucumber-js --tags=@api-smoke ./auto-tests/tests/features/api --require ./auto-tests/tests/step_definitions/api"
   },
