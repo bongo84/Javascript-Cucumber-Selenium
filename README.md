@@ -10,13 +10,6 @@
 
   <h3 align="center">JS & Cucumber Test Framework</h3>
 
-  <p align="center">
-    Javascript Test Automation Framework
-    <br />
-    <a href="https://github.com/bongo84/Javascript-Cucumber-Selenium"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-  </p>
 </div>
 
 
@@ -29,8 +22,8 @@ I wanted to get to grips with things a bit further so decided to make this frame
 What to know:
 * The Framework ustilises a BDD approach and using cucumber, selenium and superTest allows for the testing of 2 layers of the test pyramid that many QA focus on in there day to day.
 * The test application is a free online site that lets test proffessionals practice there skills - https://demoqa.com/
-* There is also a work in progress in the repo for GITHUB actions and CI testing.
-* This is still a working framework that is being added to and branched quite often
+* There is also a work in progress in the repo for GITHUB actions and CI.
+* This is still a working framework that is being added to and branched quite often. There are many areas of improvement.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -55,16 +48,29 @@ Below is a list of the following tools used in the framework
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Ok to get started you will need to have node.js installed on your system, the framework uses v20.8.0. Go to https://nodejs.org/en/download/package-manager/current for further instructions.
+You will also need a chrome browser at version 119 or greater for the framework to run successfuly.
 
 ### Installation and Running
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+Once you have these installed. In your IDE terminal execute the following to get all dependacies needed
+* Npm install
   ```sh
-  npm install npm@latest -g
+  npm install
   ```
+To actually run the tests we use tags from cucumber. As we develop our tests we add the tag in the format @test-ui or @test-api.
+To run them we execute the following.
+* UI tests
+  ```sh
+  npm test-ui
+  ```
+* API tests
+  ```sh
+  npm test-api
+  ```
+Any test marked with that tag is then executed and a test result is displayed in the terminal.
+
+Other tags are used for CI running and can be found in the scripts section of the package.json
 
 <!-- USAGE EXAMPLES -->
 ## How the Framework has been used
@@ -74,17 +80,13 @@ running with agile methodologies. Each ticket was auto numbered and branches are
 
 <div align="center">
   <a href="https://github.com/bongo84/Javascript-Cucumber-Selenium">
-    <img src="/images/jsautomation.jpg" alt="Logo" width="800" height="800">
+    <img src="/images/trello.png" alt="Logo" width="1200" height="800">
   </a>
 
-  <h3 align="center">JS & Cucumber Test Framework</h3>
+  <h3 align="center">Framework Agile Board</h3>
 
   <p align="center">
     Javascript Test Automation Framework
-    <br />
-    <a href="https://github.com/bongo84/Javascript-Cucumber-Selenium"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
   </p>
 </div>
 
