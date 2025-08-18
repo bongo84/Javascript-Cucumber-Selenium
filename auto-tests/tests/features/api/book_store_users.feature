@@ -49,3 +49,10 @@ Feature: The Book Store Api allows the user to carry out the user actions.
         When I register as a user with incorrect password makeup
         | password | Tester3004 | 
         Then the user is NOT created successfully
+
+    @api-regression
+    Scenario: The bookstore api cannot delete an unauthorized user 
+        Given that I am an API user of the demoQA bookstore
+        When I register as a new user
+        Then the user is created successfully
+        And I cannot delete the created user
