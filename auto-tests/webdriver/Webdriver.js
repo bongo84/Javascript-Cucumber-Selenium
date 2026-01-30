@@ -5,9 +5,14 @@
 const chrome = require('selenium-webdriver/chrome')
 const webdriver = require('selenium-webdriver');
 const {Builder, By, Key, until} = require('selenium-webdriver')
-const config = require('../config.json');
+const config = require('../config.js');
 const { expect } = require('chai');
 const { isUndefined } = require('lodash');
+const path = require('path');
+
+// Use ChromeDriver from node_modules instead of system
+const chromedriverPath = path.join(__dirname, '../../node_modules/chromedriver/lib/chromedriver/chromedriver');
+process.env.PATH = path.dirname(chromedriverPath) + path.delimiter + process.env.PATH;
 
 class Webdriver {
 
@@ -25,7 +30,7 @@ class Webdriver {
                 break;
         }
 
-        this.driver.manage().setTimeouts( { explicit: 10000 , pageLoad: 20000 , script: 15000} );
+        this.driver.manage().setTimeouts( { implicit: 10000 , pageLoad: 30000 , script: 15000} );
     }   
     
 
@@ -55,8 +60,8 @@ class Webdriver {
     }
 
     async launchHome(){
-        
-        await this.driver.get(config.homeUrl).wait(until.urlIs(config.homeUrl));
+        await this.driver.get(config.homeUrl);
+        await this.driver.wait(until.urlIs(config.homeUrl), 10000);
     }
 
     async navigateToPage(pageUrl){

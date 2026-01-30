@@ -1,33 +1,30 @@
 /**
- * This will be the page object manager class. Responsible for helping create the pageObjects. 
- * We want to avoid creating numerous page objects in each of the step definition files
+ * This will be the page object manager class. Responsible for helping create the pageObjects.
+ * Class automatically discovers and loads all page objects from the pageObjects directory
  */
-const HomePage = require('./HomePage');
-const ElementsPage = require('./ElementsPage');
-const FormsPage = require('./FormsPage');
-const AlertsPage = require('./AlertsPage');
-const WidgetsPage = require('./Widgets');
-const InteractionsPage = require('./InteractionsPage');
-const BookStorePage = require('./BookStorePage');
-const TextBoxPage = require('./TextBoxPage')
-const CheckBoxMenuPage = require('./CheckBoxMenuPage');
+const fs = require('fs');
+const path = require('path');
 
 class PageFactory {
-    
+
     constructor(driver){
         this.driver = driver;
-        this.HomePage = new HomePage(this.driver);
-        this.ElementsPage = new ElementsPage(this.driver);
-        this.FormsPage = new FormsPage(this.driver);
-        this.AlertsPage = new AlertsPage(this.driver);
-        this.WidgetsPage = new WidgetsPage(this.driver);
-        this.InteractionPage = new InteractionsPage(this.driver);
-        this.BookStorePage = new BookStorePage(this.driver);
-        this.TextBoxPage = new TextBoxPage(this.driver);
-        this.CheckBoxMenuPage = new CheckBoxMenuPage(this.driver);
-    }
 
-    
+        // discover and load all page objects
+        const pageObjectsDir = __dirname;
+        const files = fs.readdirSync(pageObjectsDir);
+
+        files.forEach(file => {
+            // Only process .js files, excluding PageFactory.js and BasePage.js
+            if (file.endsWith('.js') && file !== 'PageFactory.js' && file !== 'BasePage.js') {
+                const PageObjectClass = require(path.join(pageObjectsDir, file));
+                const pageObjectName = file.replace('.js', '');
+
+                // Instantiate the page object and add it to this instance
+                this[pageObjectName] = new PageObjectClass(this.driver);
+            }
+        });
+    }
 }
 
 module.exports = PageFactory;

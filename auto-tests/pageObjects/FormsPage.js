@@ -1,5 +1,5 @@
 const BasePage = require("./BasePage");
-const config = require("../config.json");
+const config = require("../config.js");
 
 
 class FormsPage extends BasePage{
@@ -23,7 +23,7 @@ class FormsPage extends BasePage{
     }
 
     async getPageTitleText(){
-        return await this.driver.getElementText("main-header");
+        return await this.driver.getElementText("text-center");
     }
 
     async loadFormsPage(){

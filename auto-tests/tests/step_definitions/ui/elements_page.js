@@ -1,6 +1,6 @@
 const {Given, When, Then} = require('cucumber')
 const {expect, assert} = require('chai')
-const config = require('../../../config.json');
+const config = require('../../../config.js');
 
 Given('the user clicks the <string> elements page menu item', async function(table){
     let value = table.rowsHash();

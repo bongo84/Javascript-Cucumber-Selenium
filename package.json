@@ -16,12 +16,13 @@
     "chai": "^1.9.1",
     "chai-as-promised": "^4.1.1",
     "cucumber": "^6.0.7",
+    "dotenv": "^17.2.3",
     "sinon": "1.10.3",
     "sinon-chai": "^2.5.0",
     "supertest": "^6.3.3"
   },
   "dependencies": {
-    "chromedriver": "^119.0.0",
+    "chromedriver": "^144.0.0",
     "q": "^1.0.1",
     "selenium-webdriver": "^4.7.1"
   },

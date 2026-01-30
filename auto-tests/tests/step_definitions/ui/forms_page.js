@@ -1,6 +1,6 @@
 const {Given, When, Then} = require('cucumber')
 const {expect, assert} = require('chai')
-const config = require('../../../config.json');
+const config = require('../../../config.js');
 
 Given('that I am at the Forms Practice page', async function(){
     await this.FormsPage.navigateToPage(config.homeUrl + this.FormsPage.practiceFormUrl);

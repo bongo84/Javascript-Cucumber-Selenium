@@ -1,7 +1,7 @@
 const request = require('supertest');
 const {Given, When, Then} = require('cucumber')
 const {expect, assert} = require('chai')
-const config = require('../../../config.json');
+const config = require('../../../config.js');
 const petstoreBaseUrl = 'https://petstore.swagger.io/v2';
 
 Given('that I am an API user of petstore',async function(){
