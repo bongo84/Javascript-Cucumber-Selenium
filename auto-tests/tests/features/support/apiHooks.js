@@ -3,7 +3,7 @@
  * Here we will initaite setup for all tests and complete teardown as well
  */
 const {Before, After, setDefaultTimeout,} = require('cucumber');
-const config = require('../../../config.json');
+const config = require('../../../config.js');
 const personaHelper = require('../../../helpers/personaHelper');
 
 Before(async function(){
