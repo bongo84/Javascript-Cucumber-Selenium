@@ -1,6 +1,6 @@
 const {Given, When, Then} = require('cucumber')
 const {expect} = require('chai')
-const config = require('../../../config.json');
+const config = require('../../../config.js');
 
 Given('that I am at the DemoQA home page' , async function(){
     const url = await this.HomePage.getPageUrl();

@@ -5,32 +5,25 @@
  * Pages will need to be passed the driver object to be initiated ??
  */
 const {Before, After, setDefaultTimeout,} = require('cucumber');
-const config = require('../../../config.json');
+const config = require('../../../config.js');
 const Webdriver = require('../../../webdriver/Webdriver');
 const driver = new Webdriver();
-const PageFactory = require('../../../pageObjects/PageFactory');
-const personaHelper = require('../../../helpers/personaHelper');
+const PageFactory = require('../../../pageObjects/PageFactory')
+
+// Set timeout before hooks run
+setDefaultTimeout(config.cucumberTimeout);
 
 Before(async function(){
-    
-    /**
-     * Dont really like how I am doing this here as in pageFact use and then 
-     * one by one making a pageObj for world object needs
-     */
-    setDefaultTimeout(config.cucumberTimeout);
-    driver.init();
-    driver.launchHome();
-    this.PageFactory = new PageFactory(driver)
-    this.HomePage = this.PageFactory.HomePage;
-    this.ElementsPage = this.PageFactory.ElementsPage;
-    this.AlertsPage = this.PageFactory.AlertsPage;
-    this.FormsPage = this.PageFactory.FormsPage;
-    this.WidgetsPage = this.PageFactory.WidgetsPage;
-    this.InteractionsPage = this.PageFactory.InteractionPage;
-    this.BookStorePage = this.PageFactory.BookStorePage;
-    this.TextBoxPage = this.PageFactory.TextBoxPage;
-    this.CheckBoxMenuPage = this.PageFactory.CheckBoxMenuPage;
-    this.persona = personaHelper.createPersona();
+
+    await driver.init();
+    await driver.launchHome();
+
+    // Create PageFactory instance with auto-discovered page objects
+    const pageFactory = new PageFactory(driver);
+
+    // Automatically spread all page objects to the world object
+    Object.assign(this, pageFactory);
+
 })
 
 After(async function(){

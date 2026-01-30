@@ -1,5 +1,5 @@
 const request = require('supertest');
-const config = require('../../config.json');
+const config = require('../../config.js');
 const accountUserPrefix = 'Account/v1/User';
 const basePrefix = config.homeUrl;
 

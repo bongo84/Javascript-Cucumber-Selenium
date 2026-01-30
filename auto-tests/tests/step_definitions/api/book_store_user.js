@@ -1,7 +1,7 @@
 const request = require('supertest');
 const {Given, When, Then} = require('cucumber')
 const {expect, assert} = require('chai')
-const config = require('../../../config.json');
+const config = require('../../../config.js');
 const {registerUser, deleteUser} = require('../../actions/bookStoreUser.js')
 
 Given('that I am an API user of the demoQA bookstore',async function(){
